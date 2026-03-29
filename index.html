@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Sharad Kumar – Web Developer & AI Data Science Student. Explore projects, skills, and get in touch." />
+    <meta name="keywords"
+        content="Sharad Kumar, Web Developer, AI, Data Science, Portfolio, Python, Flask, JavaScript" />
+    <title>Sharad Kumar | Web Developer</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="pre-logo">Web Kalakaar</div>
+        <div class="pre-bar">
+            <div class="pre-fill"></div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#hero" id="back-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- ── NAVBAR ──────────────────────── -->
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo"><span>Web Kalakaar</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#experience">Journey</a></li>
+            <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" onclick="closeMobile()">About</a>
+        <a href="#skills" onclick="closeMobile()">Skills</a>
+        <a href="#projects" onclick="closeMobile()">Projects</a>
+        <a href="#services" onclick="closeMobile()">Services</a>
+        <a href="#experience" onclick="closeMobile()">Journey</a>
+        <a href="#contact" onclick="closeMobile()">Contact</a>
+    </div>
+
+    <!-- ── HERO ────────────────────────── -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+
+        <div class="hero-content">
+            <div class="hero-tag">Available for Freelance</div>
+            <h1 class="hero-name">
+                Sharad<br>
+                <span class="gold">Kumar</span>
+            </h1>
+            <p class="hero-sub">Full Stack Web Developer </p>
+            <div class="typing-wrap">
+                I build with <span id="typed-text"></span>
+            </div>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-primary"><i class="fa fa-paper-plane"></i> Hire Me</a>
+                <a href="#projects" class="btn-secondary"><i class="fa fa-rocket"></i> View Projects</a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="hero-avatar-ring">
+                <div class="tech-badge tb1">Python 🐍</div>
+                <div class="tech-badge tb2">Flask ⚗️</div>
+                <div class="tech-badge tb3">MySQL 🗄️</div>
+                <div class="tech-badge tb4">JS ⚡</div>
+                <div class="hero-avatar-inner"><img src="me.jpeg" alt=""><img src="logo.png" class="img-hover" alt=""></div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider">
+        <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0 L720 50 L1440 0" fill="#111111" />
+        </svg>
+    </div>
+
+    <!-- ── ABOUT ────────────────────────── -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-img-wrap" data-aos="fade-right">
+                <div class="about-img"><img src="me.jpeg" alt=""></div>
+                <div class="about-img-badge">
+                    <span class="num">5+</span>
+                    <span class="lbl">Projects Done</span>
+                </div>
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <div class="section-label">About Me</div>
+                <h2 class="section-title">Crafting <span class="gold">Digital Experiences</span><br>with Purpose</h2>
+                <p>
+                    Hi, I'm <strong>Sharad Kumar</strong> — a passionate <strong> web developer </strong>and BTech
+                    student in
+                    <strong>Artificial Intelligence &amp; Data Science</strong>. I specialize in building
+                    clean, modern, and performant web applications that solve real problems.
+                </p>
+                <p>
+                    I love building modern and user-friendly websites, from clean frontends to powerful backends using
+                    Flask and MySQL. My background in AI helps me create smart, efficient, and data-driven solutions.
+                </p>
+                <p>
+                    <strong> I’m always ready to take your business to the next level by creating the best websites that
+                        look
+                        great and perform even better.</strong>
+                    <br>
+                    When I’m not coding, I enjoy exploring new technologies, working on personal projects, and
+                    continuously improving my skills in the fast-changing world of tech.
+                </p>
+                <div class="stats-row">
+                    <div class="stat">
+                        <span class="n" data-target="1">0</span>
+                        <span class="l">Paid Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="n" data-target="6">0</span>
+                        <span class="l">skills</span>
+                    </div>
+                    <div class="stat">
+                        <span class="n" data-target="1">0</span>
+                        <span class="l">Years Exp.</span>
+                    </div>
+                    <div class="stat">
+                        <span class="n" data-target="2">0</span>
+                        <span class="l">Clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider" style="background:#111;">
+        <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 50 L720 0 L1440 50" fill="#0D0D0D" />
+        </svg>
+    </div>
+
+    <!-- ── SKILLS ───────────────────────── -->
+    <section id="skills">
+        <div data-aos="fade-up">
+            <div class="section-label">What I Know</div>
+            <h2 class="section-title">My <span class="gold">Technical</span> Skills</h2>
+            <p class="section-desc">“The core technologies I use daily to create attractive, modern, scalable, and
+                efficient digital Websites.”
+            </p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card" data-aos="fade-up">
+                <div class="skill-icon">🌐</div>
+                <div class="skill-name">HTML5</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="95"></div>
+                </div>
+                <div class="skill-pct">95%</div>
+                <p class="skill-desc">Building well-structured, semantic, and modern web pages.</p>
+            </div>
+
+            <div class="skill-card" data-aos="fade-up">
+                <div class="skill-icon">🎨</div>
+                <div class="skill-name">CSS3</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="90"></div>
+                </div>
+                <div class="skill-pct">90%</div>
+                <p class="skill-desc">Creating responsive, beautiful, and modern UI designs.</p>
+            </div>
+
+            <div class="skill-card" data-aos="fade-up">
+                <div class="skill-icon">⚡</div>
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="90"></div>
+                </div>
+                <div class="skill-pct">90%</div>
+                <p class="skill-desc">Adding interactivity and dynamic behavior to websites.</p>
+            </div>
+
+            <div class="skill-card" data-aos="fade-up">
+                <div class="skill-icon">🐍</div>
+                <div class="skill-name">Python</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="85"></div>
+                </div>
+                <div class="skill-pct">85%</div>
+                <p class="skill-desc">Writing clean and efficient backend logic and scripts.</p>
+            </div>
+
+            <div class="skill-card" data-aos="fade-up">
+                <div class="skill-icon">⚗️</div>
+                <div class="skill-name">Flask</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="78"></div>
+                </div>
+                <div class="skill-pct">78%</div>
+                <p class="skill-desc">Building fast and scalable web applications using Flask.</p>
+            </div>
+
+            <div class="skill-card" data-aos="fade-up">
+                <div class="skill-icon">🗄️</div>
+                <div class="skill-name">MySQL</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="80"></div>
+                </div>
+                <div class="skill-pct">80%</div>
+                <p class="skill-desc">Managing databases and handling structured data efficiently.</p>
+            </div>
+
+            <div class="skill-card" data-aos="fade-up">
+                <div class="skill-icon">💬</div>
+                <div class="skill-name">Communication</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="90"></div>
+                </div>
+                <div class="skill-pct">90%</div>
+                <p class="skill-desc">Clear and confident communication to understand client needs and deliver results.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider" style="background:#0D0D0D;">
+        <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0 L720 50 L1440 0" fill="#111111" />
+        </svg>
+    </div>
+
+    <!-- ── PROJECTS ──────────────────────── -->
+    <section id="projects">
+        <div data-aos="fade-up">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title">Featured <span class="gold">Projects</span></h2>
+            <p class="section-desc">“A collection of real-world projects that highlight my full-stack development
+                skills.”
+            </p>
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="project-img">
+                    <div class="proj-img-gradient"></div>
+                    <div class="proj-icon">🏫</div>
+                    <div class="proj-num">01</div>
+                </div>
+                <div class="project-body">
+                    <span class="project-tag">School website-1</span>
+                    <h3 class="project-title">Classic School Website</h3>
+                    <p class="project-desc">A clean and simple school website with a white and navy theme, designed for clarity and easy navigation, with subtle animations for a smooth user experience.</p>
+                    <div class="project-btns">
+                        <a href="https://web-kalakaar.github.io/millennium-school-website-/" class="proj-btn live" target="_blank" ><i class="fa fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/web-kalakaar/millennium-school-website-" class="proj-btn gh" target="_blank" ><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-img">
+                    <div class="proj-img-gradient"></div>
+                    <div class="proj-icon">🏫</div>
+                    <div class="proj-num">02</div>
+                </div>
+                <div class="project-body">
+                    <span class="project-tag">School website-1</span>
+                    <h3 class="project-title">Vibrant School Design</h3>
+                    <p class="project-desc">A colorful school website using green, blue, and red tones, combining a lively design with light animations to create an engaging and modern look.</p>
+                    <div class="project-btns">
+                        <a href="https://web-kalakaar.github.io/school2website/" class="proj-btn live" target="_blank" ><i class="fa fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/web-kalakaar/school2website" class="proj-btn gh" target="_blank" ><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-img">
+                    <div class="proj-img-gradient"></div>
+                    <div class="proj-icon">🏫</div>
+                    <div class="proj-num">03</div>
+                </div>
+                <div class="project-body">
+                    <span class="project-tag">School website-1</span>
+                    <h3 class="project-title">Smart School Experience</h3>
+                    <p class="project-desc">A well-designed website focused on user experience, providing all essential school information in a clear, structured, and highly attractive interface.</p>
+                    <div class="project-btns">
+                        <a href="https://web-kalakaar.github.io/school3website/" class="proj-btn live" target="_blank" ><i class="fa fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/web-kalakaar/school3website" class="proj-btn gh" target="_blank" ><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-img">
+                    <div class="proj-img-gradient"></div>
+                    <div class="proj-icon">🏫</div>
+                    <div class="proj-num">04</div>
+                </div>
+                <div class="project-body">
+                    <span class="project-tag">School Website-4</span>
+                    <h3 class="project-title">Next-Gen School Website</h3>
+                    <p class="project-desc">A highly interactive and visually stunning website featuring advanced UI/UX design and smooth animations, delivering a modern and immersive experience.</p>
+                    <div class="project-btns">
+                        <a href="https://web-kalakaar.github.io/school4web/" target="_blank"  class="proj-btn live"><i class="fa fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/web-kalakaar/school4web" target="_blank" class="proj-btn gh"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-img">
+                    <div class="proj-img-gradient"></div>
+                    <div class="proj-icon">🏥</div>
+                    <div class="proj-num">05</div>
+                </div>
+                <div class="project-body">
+                    <span class="project-tag">Healthcare</span>
+                    <h3 class="project-title">MediCare — Health Portal</h3>
+                    <p class="project-desc">Patient management system for clinics with appointment scheduling and
+                        records management.</p>
+                    <div class="project-btns">
+                        <a href="#" class="proj-btn live"><i class="fa fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="proj-btn gh"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="project-img">
+                    <div class="proj-img-gradient"></div>
+                    <div class="proj-icon">🎓</div>
+                    <div class="proj-num">06</div>
+                </div>
+                <div class="project-body">
+                    <span class="project-tag">EdTech</span>
+                    <h3 class="project-title">LearnHub — LMS Platform</h3>
+                    <p class="project-desc">Learning management system with video lectures, quizzes, and progress
+                        tracking for students.</p>
+                    <div class="project-btns">
+                        <a href="#" class="proj-btn live"><i class="fa fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="proj-btn gh"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider" style="background:#111;">
+        <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 50 L720 0 L1440 50" fill="#0D0D0D" />
+        </svg>
+    </div>
+
+    <!-- ── SERVICES ──────────────────────── -->
+    <section id="services">
+        <div data-aos="fade-up">
+            <div class="section-label">What I Offer</div>
+            <h2 class="section-title">My <span class="gold">Services</span></h2>
+            <p class="section-desc">I deliver complete digital solutions—from concept to deployment—designed to help
+                your business grow.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="service-num">01</div>
+                <div class="service-icon">🌐</div>
+                <h3 class="service-title">Website Development</h3>
+                <p class="service-desc">Full-stack web apps using HTML, CSS, JS, Flask &amp; MySQL. From landing pages
+                    to complex portals, built fast and scalable.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-num">02</div>
+                <div class="service-icon">🎨</div>
+                <h3 class="service-title">UI/UX Design</h3>
+                <p class="service-desc">Clean, modern interface design with user-first thinking. Wireframes, prototypes,
+                    and pixel-perfect implementations.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-num">03</div>
+                <div class="service-icon">📱</div>
+                <h3 class="service-title">Responsive Design</h3>
+                <p class="service-desc">Mobile-first, fully responsive layouts that look stunning on every screen —
+                    phone, tablet, or desktop.</p>
+            </div>
+
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-num">04</div>
+                <div class="service-icon">🗄️</div>
+                <h3 class="service-title">Database Design</h3>
+                <p class="service-desc">Efficient MySQL schema design, query optimization, and backend API development
+                    for data-heavy applications.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-num">05</div>
+                <div class="service-icon">🚀</div>
+                <h3 class="service-title">Deployment & SEO</h3>
+                <p class="service-desc">From deployment to SEO optimization, I ensure your website is fast, live, and
+                    fully optimized to rank higher on search engines and attract more visitors.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider" style="background:#0D0D0D;">
+        <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0 L720 50 L1440 0" fill="#111111" />
+        </svg>
+    </div>
+
+    <!-- ── EXPERIENCE / EDUCATION ─────────── -->
+    <section id="experience">
+        <div data-aos="fade-up" style="text-align:center;margin-bottom:64px;">
+            <div class="section-label" style="justify-content:center;">My Journey</div>
+            <h2 class="section-title">Education &amp; <span class="gold">Experience</span></h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="tl-item" data-aos="fade-right">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <div class="tl-year">2025 — Present</div>
+                    <div class="tl-title">BTech — AI &amp; Data Science</div>
+                    <div class="tl-place">🏛️ Engineering College, Bharatpur</div>
+                    <div class="tl-desc">
+                        Continously Developing expertise in full-stack technologies, including AI, Machine Learning,
+                        databases, and
+                        software engineering to increase my productivity.
+                    </div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-left">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <div class="tl-year">2025 — 2026</div>
+                    <div class="tl-title">Web Development Diploma</div>
+                    <div class="tl-place">💻 Aptech Institute, Bharatpur</div>
+                    <div class="tl-desc">Mastered core web technologies—HTML, CSS, JavaScript, Python, and Flask—through
+                        an intensive program and built many real-world projects and make their business next level.
+                    </div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-right">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <div class="tl-year">2026</div>
+                    <div class="tl-title">Freelance Web Developer</div>
+                    <div class="tl-place">🌍 Remote — Independent</div>
+                    <div class="tl-desc">Delivered high-quality client projects across e-commerce, portfolios,
+                        dashboards, and business websites, focusing on modern design, performance, and user experience
+                        to meet real-world business needs.</div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-left">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <div class="tl-year">2025</div>
+                    <div class="tl-title">Creative Problem Solver</div>
+                    <div class="tl-place">💡 Mindset — Innovation & Strategy</div>
+                    <div class="tl-desc">
+                        I focus on understanding real-world problems and continuously work on creating smart, practical
+                        solutions. With a strong interest in business ideas and strategic thinking, I approach every
+                        project with creativity, clarity, and a mindset to deliver the best possible results.
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider" style="background:#111;">
+        <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 50 L720 0 L1440 50" fill="#0D0D0D" />
+        </svg>
+    </div>
+
+    <!-- ── TESTIMONIALS ──────────────────── -->
+    <!-- <section id="testimonials">
+        <div data-aos="fade-up">
+            <div class="section-label">Social Proof</div>
+            <h2 class="section-title">What <span class="gold">Clients</span> Say</h2>
+            <p class="section-desc">Feedback from people I've had the pleasure of working with.</p>
+        </div>
+
+        <div class="testi-grid">
+
+            <div class="testi-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="testi-quote">"</div>
+                <div class="testi-stars">★★★★★</div>
+                <div class="testi-text">Sharad built our entire e-commerce platform in record time. The quality exceeded
+                    our expectations — clean code, great design, zero bugs on launch.</div>
+                <div class="testi-author">
+                    <div class="testi-av">RK</div>
+                    <div>
+                        <div class="testi-name">Rohit Khanna</div>
+                        <div class="testi-role">CEO, RetailHub</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testi-quote">"</div>
+                <div class="testi-stars">★★★★★</div>
+                <div class="testi-text">Incredible attention to detail! The website he delivered looks like it came from
+                    a top agency. Super responsive and communicative throughout.</div>
+                <div class="testi-author">
+                    <div class="testi-av">PS</div>
+                    <div>
+                        <div class="testi-name">Priya Sharma</div>
+                        <div class="testi-role">Founder, StyleBoutique</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testi-quote">"</div>
+                <div class="testi-stars">★★★★★</div>
+                <div class="testi-text">The Flask dashboard Sharad built processes our data beautifully. His
+                    understanding of both AI and web dev is rare and incredibly valuable.</div>
+                <div class="testi-author">
+                    <div class="testi-av">AM</div>
+                    <div>
+                        <div class="testi-name">Arjun Mehta</div>
+                        <div class="testi-role">Data Lead, StartupX</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section> -->
+
+    <!-- Divider -->
+    <div class="divider" style="background:#0D0D0D;">
+        <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0 L720 50 L1440 0" fill="#111111" />
+        </svg>
+    </div>
+
+    <!-- ── CONTACT ────────────────────────── -->
+    <section id="contact">
+        <div data-aos="fade-up">
+            <div class="section-label">Contact Me </div>
+            <h2 class="section-title">Let's <span class="gold">Work</span> Together</h2>
+            <p class="section-desc">Have a project in mind? Let’s connect and turn your idea into a powerful reality.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-method">
+                    <div class="cm-icon"><i class="fa fa-envelope"></i></div>
+                    <div class="cm-text">
+                        <div class="cm-label">Email</div>
+                        <div class="cm-val">rajputsharad766@email.com</div>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="cm-icon"><i class="fa fa-phone"></i></div>
+                    <div class="cm-text">
+                        <div class="cm-label">Phone</div>
+                        <div class="cm-val">+91 9413604850</div>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="cm-icon"><i class="fa fa-map-marker-alt"></i></div>
+                    <div class="cm-text">
+                        <div class="cm-label">Location</div>
+                        <div class="cm-val">Bharatpur, Rajasthan, India</div>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="cm-icon"><i class="fa fa-clock"></i></div>
+                    <div class="cm-text">
+                        <div class="cm-label">Availability</div>
+                        <div class="cm-val">Mon–Sun, 9AM–8PM IST</div>
+                    </div>
+                </div>
+
+                <div class="social-row">
+                    <a href="https://github.com/web-kalakaar" class="social-btn" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/codexstyles?igsh=MTRmdjI2Z3dwa2lmdA==" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/codexstyles?igsh=MTRmdjI2Z3dwa2lmdA==" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+
+                <!-- Map embed placeholder -->
+                <div style="margin-top:36px; border-radius:16px; overflow:hidden; border:1px solid var(--border);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1774.1351186376307!2d77.51961669834338!3d27.21066413471358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3973a3cf376c9d13%3A0xf03387b84e058570!2sKakaJi%20ki%20Kothi%20Old!5e0!3m2!1sen!2sin!4v1774802925090!5m2!1sen!2sin"
+                        width="100%" height="200"
+                        style="border:0;display:block;filter:invert(1) hue-rotate(180deg) brightness(0.8) saturate(0.6);"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+
+                </div>
+            </div>
+
+            <div class="contact-form" data-aos="fade-left">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" placeholder="John" id="fname" />
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Doe" id="lname" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="john@example.com" id="femail" />
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" placeholder="Project Inquiry" id="fsubject" />
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Tell me about your project, budget, and timeline..."
+                        id="fmessage"></textarea>
+                </div>
+                <p class="form-note">⚡ I typically respond within 24 hours. All conversations are confidential.</p>
+                <button class="btn-primary" onclick="submitForm()" style="width:100%;justify-content:center;">
+                    <i class="fa fa-paper-plane"></i> Send Message
+                </button>
+                <div class="form-success" id="form-success">
+                    ✅ Message sent! I'll get back to you within 24 hours.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ────────────────────────── -->
+    <footer>
+        <a href="#hero" class="footer-logo">Web Kalakaar</a>
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-copy"> 2025 Sharad Kumar. Built with ❤️ &amp; ☕</div>
+    </footer>
+
+    <!-- AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
