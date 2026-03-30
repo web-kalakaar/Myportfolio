@@ -159,12 +159,10 @@ function submitForm() {
   btn.disabled = true;
   setTimeout(() => {
     btn.innerHTML = '<i class="fa fa-check"></i> Sent!';
-    document.getElementById("form-success").style.display = "block";
-    // reset after 4s
+    document.getElementById("popup-overlay").classList.add("active");
     setTimeout(() => {
       btn.innerHTML = '<i class="fa fa-paper-plane"></i> Send Message';
       btn.disabled = false;
-      document.getElementById("form-success").style.display = "none";
       ["fname", "lname", "femail", "fsubject", "fmessage"].forEach(
         (id) => (document.getElementById(id).value = ""),
       );
@@ -172,6 +170,13 @@ function submitForm() {
   }, 1500);
 }
 
+document.getElementById("popup-close").addEventListener("click", () => {
+  document.getElementById("popup-overlay").classList.remove("active");
+});
+document.getElementById("popup-overlay").addEventListener("click", (e) => {
+  if (e.target.id === "popup-overlay")
+    document.getElementById("popup-overlay").classList.remove("active");
+});
 // ── SMOOTH SCROLL ──────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener("click", (e) => {

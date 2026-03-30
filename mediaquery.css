@@ -1,8 +1,11 @@
-/* ── RESPONSIVE ──────────────────────────────────────── */
+
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 @media (max-width: 1024px) {
-  .hero-right {
-    display: none;
-  }
+
 
   .about-grid {
     grid-template-columns: 1fr;
@@ -30,39 +33,52 @@
 }
 
 @media (max-width: 768px) {
+    .hero-right {
+display: none;
+
+  }
+
   body {
     overflow-x: hidden;
     width: 100%;
   }
-.pre-logo{
+
+  .pre-logo {
     margin: 0 auto;
-}
+  }
+
   #cursor {
     opacity: 0;
   }
+
   #cursor-ring {
     opacity: 0;
     z-index: -11;
   }
+
   section {
     padding: 80px 5%;
-    overflow-x: hidden;
   }
 
+ 
   #navbar {
-    width: 100vw;
+    width: 100%;
+    left: 0;
+    right: 0;
   }
 
   .nav-links {
     display: none;
   }
+
+ 
   #back-top {
-    margin-right: 10px;
+    right: 16px;
+    bottom: 24px;
   }
 
   .hamburger {
     display: flex;
-    justify-content: left;
   }
 
   .form-row {
@@ -72,8 +88,24 @@
   .hero-name {
     letter-spacing: -2px;
   }
+
   .hero-btns {
     margin: 10px auto;
+  }
+
+  .orb1 {
+    width: 240px;
+    height: 240px;
+  }
+
+  .orb2 {
+    width: 160px;
+    height: 160px;
+  }
+
+  .orb3 {
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -82,12 +114,15 @@
     overflow-x: hidden;
     width: 100%;
   }
+
   #cursor {
     opacity: 0;
   }
+
   #cursor-ring {
     opacity: 0;
   }
+
   .stats-row {
     gap: 16px;
   }
@@ -104,6 +139,11 @@
   footer {
     flex-direction: column;
     text-align: center;
+   
+  }
+
+  .footer-copy {
+    margin-right: 0;
   }
 
   .footer-links {
