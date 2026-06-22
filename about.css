@@ -1,0 +1,120 @@
+
+/* ═══════════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════════ */
+#about {
+  background: var(--black2);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.55fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-visual {
+  position: relative;
+}
+.about-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+}
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-photo::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 26px;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    transparent 60%,
+    var(--gold)
+  );
+  animation: borderGlow 3s ease-in-out infinite alternate;
+}
+@keyframes borderGlow {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 0.85;
+  }
+}
+
+.about-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 16px;
+  padding: 18px 22px;
+  text-align: center;
+  box-shadow: var(--glow);
+}
+.about-badge .num {
+  font-family: "Syne", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  display: block;
+}
+.about-badge .lbl {
+  font-family: "Space Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.about-text p {
+  color: var(--white2);
+  font-weight: 300;
+  margin-bottom: 18px;
+  font-size: 1.02rem;
+}
+.about-text p strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 40px;
+}
+.stat {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 14px;
+  text-align: center;
+  transition: var(--tr);
+}
+.stat:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow);
+}
+.stat .n {
+  font-family: "Syne", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
+  display: block;
+}
+.stat .l {
+  font-family: "Space Mono", monospace;
+  font-size: 0.62rem;
+  color: var(--gray);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

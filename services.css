@@ -1,0 +1,75 @@
+
+/* ═══════════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════════ */
+#services {
+  background: var(--black);
+}
+
+.services-grid {
+  display: grid;
+
+  grid-template-areas:
+    "sv01 sv01 sv02 sv02"
+    "sv01 sv01 sv02 sv02"
+    "sv03 sv04 sv05 sv05";
+  gap: 2px;
+}
+.service-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 75px 32px 44px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--tr);
+}
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--tr);
+}
+.service-card:hover {
+  border-color: rgba(250, 204, 21, 0.4);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+}
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+
+.service-card:hover .svc-icon {
+  background: rgba(250, 204, 21, 0.15);
+  box-shadow: 0 0 24px rgba(250, 204, 21, 0.25);
+}
+
+.svc-num {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-family: "Syne", sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: rgba(250, 204, 21, 0.1);
+  line-height: 1;
+}
+.svc-title {
+  font-family: "Syne", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #FFFFFF;
+}
+.svc-desc {
+  font-size: 0.9rem;
+  color: #B8B8B8;
+  line-height: 1.7;
+}
