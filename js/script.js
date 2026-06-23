@@ -1,25 +1,10 @@
-/* ── BUILD SERVICES ────────────────────────── */
-const servicesGrid = document.getElementById("servicesGrid");
-
-SERVICES.forEach((sv, i) => {
-  const c = document.createElement("div");
-  c.className = `service-card reveal ${sv.num} `;
-  c.style.transitionDelay = i * 0.08 + "s";
-  c.style.gridArea = `sv${sv.num}`;
-  c.innerHTML = `
-      <div class="svc-num">${sv.num}</div>
-      <h3 class="svc-title">${sv.title}</h3>
-      <p class="svc-desc">${sv.desc}</p>
-    `;
-  servicesGrid.appendChild(c);
-});
 
 /* ── BUILD PROJECTS ────────────────────────── */
 const projGrid = document.getElementById("projectsGrid");
 PROJECTS.forEach((p, i) => {
   const c = document.createElement("div");
   c.className = "project-card reveal";
-  c.style.transitionDelay = i * 0.2 + "s";
+  c.style.transitionDelay = i * 0.5 + "s";
 
   c.innerHTML = `
         <div class="proj-preview">
@@ -59,6 +44,21 @@ PROJECTS.forEach((p, i) => {
   });
 
   projGrid.appendChild(c);
+});
+/* ── BUILD SERVICES ────────────────────────── */
+const servicesGrid = document.getElementById("servicesGrid");
+
+SERVICES.forEach((sv, i) => {
+  const c = document.createElement("div");
+  c.className = `service-card reveal ${sv.num} `;
+  c.style.transitionDelay = i * 0.08 + "s";
+  c.style.gridArea = `sv${sv.num}`;
+  c.innerHTML = `
+      <div class="svc-num">${sv.num}</div>
+      <h3 class="svc-title">${sv.title}</h3>
+      <p class="svc-desc">${sv.desc}</p>
+    `;
+  servicesGrid.appendChild(c);
 });
 
 /* ── PRELOADER ──────────────────────────────── */
