@@ -1,3 +1,6 @@
+emailjs.init({
+  publicKey: "LfvcbtBQfzG3ORN9A",
+});
 /* ── FORM SUBMIT ────────────────────────────── */
 window.submitForm = function () {
   const fname = document.getElementById("fname").value.trim();
@@ -18,9 +21,9 @@ window.submitForm = function () {
     return;
   }
   if (!/^[6-9]\d{9}$/.test(phone)) {
-  alert("Please enter a valid 10-digit phone number.");
-  return;
-}
+    alert("Please enter a valid 10-digit phone number.");
+    return;
+  }
   const btn = document.querySelector(".contact-form .btn-primary");
   btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
   btn.disabled = true;
@@ -32,9 +35,9 @@ window.submitForm = function () {
     from_phone: phone,
     from_subject: subject,
     from_message: msg,
-    from_submittedAt:submittedAt
+    from_submittedAt: submittedAt,
   };
-console.table(Params)
+  console.table(Params);
 
   emailjs
     .send("service_2z6wdhc", "template_9s63ebc", Params)
