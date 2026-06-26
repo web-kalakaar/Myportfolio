@@ -4,7 +4,7 @@ const projGrid = document.getElementById("projectsGrid");
 PROJECTS.forEach((p, i) => {
   const c = document.createElement("div");
   c.className = "project-card reveal";
-  c.style.transitionDelay = i * 0.5 + "s";
+  c.style.transitionDelay = i * 0.08 + "s";
 
   c.innerHTML = `
         <div class="proj-preview">
@@ -184,14 +184,14 @@ setTimeout(type, 1900);
 
 
 /* ── SCROLL REVEAL ──────────────────────────── */
-const revObs = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) e.target.classList.add("vis");
-    });
-  },
-  { threshold: 0.1 },
-);
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add("vis");
+      revObs.unobserve(e.target); // stop watching
+    }
+  });
+}, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
 document
   .querySelectorAll(".reveal,.reveal-left,.reveal-right")
   .forEach((el) => revObs.observe(el));

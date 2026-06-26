@@ -171,3 +171,18 @@
   border-color: var(--gold);
   color: var(--gold);
 }
+
+.project-card.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+  will-change: opacity, transform;
+}
+.project-card.reveal.vis {
+  opacity: 1;
+  transform: translateY(0);
+}
