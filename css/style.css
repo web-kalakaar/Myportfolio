@@ -1,0 +1,343 @@
+/* ═══════════════════════════════════════════
+       RESET & TOKENS
+    ═══════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #0d0d0d;
+  --black2: #111111;
+  --black3: #1a1a1a;
+  --gold: #facc15;
+  --gold2: #ffd54f;
+  --gold3: #fef08a;
+  --white: #f5f5f5;
+  --white2: #e0e0e0;
+  --gray: #888888;
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass2: rgba(255, 255, 255, 0.08);
+  --border: rgba(250, 204, 21, 0.15);
+  --shadow: 0 8px 32px rgba(250, 204, 21, 0.12);
+  --glow: 0 0 30px rgba(250, 204, 21, 0.35);
+  --radius: 16px;
+  --tr: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+}
+html,
+body {
+    overflow-x: hidden;
+}
+/* noise overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ═══════════════════════════════════════════
+       SCROLL PROGRESS
+    ═══════════════════════════════════════════ */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold3));
+  z-index: 9998;
+  width: 0%;
+  box-shadow: 0 0 8px var(--gold);
+  transition: width 0.1s linear;
+}
+
+/* ═══════════════════════════════════════════
+       PRELOADER
+    ═══════════════════════════════════════════ */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99997;
+  flex-direction: column;
+  gap: 28px;
+}
+.pre-logo {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(1.8rem, 7vw, 4.5rem);
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: -2px;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+.pre-logo .char {
+  display: inline-block;
+  animation: charUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+@keyframes charUp {
+  from {
+    transform: translateY(110%) rotateX(40deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotateX(0);
+    opacity: 1;
+  }
+}
+.pre-bar {
+  width: 220px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+.pre-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold3));
+  animation: preLoad 1.8s ease forwards;
+  box-shadow: 0 0 10px var(--gold);
+}
+@keyframes preLoad {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.pre-pct {
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  color: rgba(250, 204, 21, 0.6);
+}
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* ═══════════════════════════════════════════
+       CURSOR
+    ═══════════════════════════════════════════ */
+#cursor {
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.15s,
+    height 0.15s,
+    background 0.15s,
+    box-shadow 0.15s;
+}
+#cursor-ring {
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid rgba(250, 204, 21, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 999998;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s,
+    height 0.2s,
+    border-color 0.2s;
+}
+body.chover #cursor {
+  width: 20px;
+  height: 20px;
+  box-shadow: var(--glow);
+}
+body.chover #cursor-ring {
+  width: 56px;
+  height: 56px;
+  border-color: var(--gold);
+}
+
+/* ═══════════════════════════════════════════
+       SHARED SECTION STYLES
+    ═══════════════════════════════════════════ */
+section {
+  padding: 110px 6%;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.eyebrow::before {
+  content: "";
+  flex-shrink: 0;
+  width: 36px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+.section-title {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.section-title .gold {
+  color: var(--gold);
+}
+
+.section-desc {
+  color: var(--gray);
+  max-width: 520px;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 60px;
+}
+
+.divider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  line-height: 0;
+}
+.divider svg {
+  display: block;
+  width: 100%;
+}
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal.vis,
+.reveal-left.vis,
+.reveal-right.vis {
+  opacity: 1;
+  transform: none;
+}
+
+/* global gold utility */
+.gold {
+  color: var(--gold);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — style.css
+   Covers: global body/section, cursor, timeline (legacy, no
+   dedicated component file), accessibility
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   ≤ 768px  ·  MOBILE
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* ── Global ── */
+  body {
+    overflow-x: hidden;
+    /* belt-and-suspenders: stops rogue elements scrolling past viewport */
+  }
+  section {
+    padding: 80px 5%;
+  }
+
+  /* ── Cursor ── */
+  /* Custom cursor elements are mouse-only — hide on touch devices */
+  #cursor,
+  #cursor-ring {
+    display: none;
+  }
+
+  /* ── Timeline / Journey ── */
+  /* Legacy rules preserved from original mediaquery.css — no dedicated
+     timeline.css was supplied among the source files, kept here so no
+     code is lost. */
+  .timeline::before {
+    left: 26px;
+    transform: none; /* base uses translateX(-50%) for center — pin left instead */
+  }
+  .tl-item,
+  .tl-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: 52px;
+    padding-right: 0;
+  }
+  .tl-dot {
+    left: 20px;
+    transform: translateY(-50%); /* keep vertical centering, drop horizontal shift */
+  }
+  .tl-card {
+    max-width: 100%;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ACCESSIBILITY  ·  REDUCED MOTION
+   ───────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

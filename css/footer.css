@@ -1,4 +1,3 @@
-
 /* ═══════════════════════════════════════════
        FOOTER
     ═══════════════════════════════════════════ */
@@ -82,4 +81,33 @@ footer {
 #back-top:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 48px rgba(250, 204, 21, 0.6);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — footer.css
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   ≤ 768px  ·  MOBILE
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* ── Footer ── */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ── Back to Top ── */
+  #back-top {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
 }

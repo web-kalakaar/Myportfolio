@@ -7,52 +7,52 @@
   <meta name="description"
     content="Sharad Kumar – Web Developer & AI Data Science Student. Explore projects, skills, and get in touch.">
   <meta name="keywords" content="Sharad Kumar, Web Developer, AI, Data Science, Portfolio, Python, Flask, JavaScript">
+  <link rel="icon" type="image/png" href="logo.png">
   <title>Sharad Kumar | Web Developer</title>
 
+  <!-- ═══════════════════════════════════════════
+       FONTS & ICONS
+  ═══════════════════════════════════════════ -->
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-  <link rel="stylesheet" href="css/body.css">
-  <link rel="stylesheet" href="css/cursor.css">
+  <!-- ═══════════════════════════════════════════
+       STYLESHEETS
+       style.css loads first — it defines the
+       :root variables every other file depends on
+  ═══════════════════════════════════════════ -->
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/preloader.css">
-  <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/skills.css">
   <link rel="stylesheet" href="css/projects.css">
   <link rel="stylesheet" href="css/services.css">
-  <link rel="stylesheet" href="css/journey.css">
-  <link rel="stylesheet" href="css/downloads.css">
+  <link rel="stylesheet" href="css/why-us.css">
   <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/popup.css">
-  <link rel="stylesheet" href="css/mediaquery.css">
 </head>
 
 <body>
 
-  <!-- Hidden SVG gradient for skill rings -->
-  <svg width="0" height="0" style="position:absolute;overflow:hidden">
-    <defs>
-      <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#facc15" />
-        <stop offset="100%" stop-color="#fef08a" />
-      </linearGradient>
-    </defs>
-  </svg>
-
-  <!-- Cursor -->
+  <!-- ═══════════════════════════════════════════
+       CURSOR
+  ═══════════════════════════════════════════ -->
   <div id="cursor"></div>
   <div id="cursor-ring"></div>
-  <!-- Progress bar -->
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL PROGRESS
+  ═══════════════════════════════════════════ -->
   <div id="scroll-progress"></div>
 
-  <!-- Preloader -->
+  <!-- ═══════════════════════════════════════════
+       PRELOADER
+  ═══════════════════════════════════════════ -->
   <div id="preloader">
     <div class="pre-logo" id="preLogoEl"></div>
     <div class="pre-bar">
@@ -61,10 +61,14 @@
     <div class="pre-pct" id="pre-pct">0%</div>
   </div>
 
-  <!-- Back to top -->
+  <!-- ═══════════════════════════════════════════
+       BACK TO TOP
+  ═══════════════════════════════════════════ -->
   <a href="#hero" id="back-top"><i class="fa fa-arrow-up"></i></a>
 
-  <!-- ─── NAVBAR ─────────────────────────── -->
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
   <nav id="navbar">
     <a class="nav-logo" href="#hero">
       <img src="logo.png" alt="Web Kalakaar">
@@ -72,10 +76,10 @@
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#skills-new">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#experience">Journey</a></li>
+      <li><a href="#why-us">why us</a></li>
       <li><a href="#contact" class="nav-cta">Hire Me</a></li>
     </ul>
     <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
@@ -84,16 +88,17 @@
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobMenu">
     <a href="#about" onclick="closeMob()">About</a>
-    <a href="#skills" onclick="closeMob()">Skills</a>
+    <a href="#skills-new" onclick="closeMob()">Skills</a>
     <a href="#projects" onclick="closeMob()">Projects</a>
     <a href="#services" onclick="closeMob()">Services</a>
-    <a href="#experience" onclick="closeMob()">Journey</a>
+    <a href="#why-us" onclick="closeMob()">why us</a>
     <a href="#contact" onclick="closeMob()">Contact</a>
   </div>
 
-  <!-- ─── HERO ───────────────────────────── -->
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
   <section id="hero">
-    <canvas id="hero-canvas"></canvas>
 
     <div class="hero-content">
       <div class="hero-tag">
@@ -145,7 +150,6 @@
       </div>
     </div>
 
-
   </section>
 
   <div class="divider">
@@ -154,7 +158,9 @@
     </svg>
   </div>
 
-  <!-- ─── ABOUT ───────────────────────────── -->
+  <!-- ═══════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════ -->
   <section id="about">
     <div class="about-grid">
       <div class="about-visual reveal-left">
@@ -189,118 +195,78 @@
         </div>
       </div>
     </div>
-    <!-- ─── SKILLS ──────────────────────────── -->
-
   </section>
-  <section id="skills">
-    <div class="reveal" style="text-align:center">
-      <div class="eyebrow" style="justify-content:center">What I Know</div>
-      <h2 class="section-title">My <span class="gold">Technical</span> Skills</h2>
-      <p class="section-desc" style="margin:0 auto 60px">
-        The core technologies I use daily to create attractive, modern, scalable, and efficient websites.
+
+  <!-- ═══════════════════════════════════════════
+       SKILLS
+  ═══════════════════════════════════════════ -->
+  <section id="skills-new">
+    <div class="skills-head">
+      <span class="eyebrow"><span class="hero-dot"></span>Tech Stack</span>
+      <h2 class="section-title">Tools I Build <span class="gold">With</span></h2>
+      <p class="section-desc">
+        A focused stack, sharpened project after project — from markup to
+        server-side logic to the database underneath.
       </p>
     </div>
 
-    <!-- ─── web ──────────────────────────── -->
-    <div class="skills-grid " id="SkillsGrid">
+    <div class="marquee-wrap">
+      <div class="marquee-edge marquee-edge--left"></div>
+      <div class="marquee-edge marquee-edge--right"></div>
 
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-        <p>HTML</p>
+      <div class="marquee-row" data-dir="left">
+        <div class="marquee-track" id="marqueeTrack1"></div>
       </div>
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-        <p>CSS</p>
-      </div>
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-        <p>JAVASCRIPT</p>
-      </div>
-      <div class="skill-card reveal">
-
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-plain.svg" />
-        <p>PYTHON</p>
-      </div>
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
-        <p>MYSQL</p>
-      </div>
-
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-        <p>GIT</p>
-      </div>
-      <div class="skill-card reveal">
-
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <g fill="none" stroke="#f4ebeb" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-            <path
-              d="M12 4c1.67 0 2.61 0.4 3 0.5c0.53 -0.43 1.94 -1.5 3.5 -1.5c0.34 1 0.29 2.22 0 3c0.75 1 1 2 1 3.5c0 2.19 -0.48 3.58 -1.5 4.5c-1.02 0.92 -2.11 1.37 -3.5 1.5c0.65 0.54 0.5 1.87 0.5 2.5c0 0.73 0 3 0 3M12 4c-1.67 0 -2.61 0.4 -3 0.5c-0.53 -0.43 -1.94 -1.5 -3.5 -1.5c-0.34 1 -0.29 2.22 0 3c-0.75 1 -1 2 -1 3.5c0 2.19 0.48 3.58 1.5 4.5c1.02 0.92 2.11 1.37 3.5 1.5c-0.65 0.54 -0.5 1.87 -0.5 2.5c0 0.73 0 3 0 3" />
-            <path d="M9 19c-1.41 0 -2.84 -0.56 -3.69 -1.19c-0.84 -0.63 -1.09 -1.66 -2.31 -2.31" />
-          </g>
-        </svg>
-        <p>GITHUB</p>
-      </div>
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-        <p>VSCODE</p>
-      </div>
-
-      <!-- other extra -->
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-        <p>HTML</p>
-      </div>
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-        <p>CSS</p>
-      </div>
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-        <p>JAVASCRIPT</p>
-      </div>
-      <div class="skill-card reveal">
-
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-plain.svg" />
-        <p>PYTHON</p>
-      </div>
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
-        <p>MYSQL</p>
-      </div>
-
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-        <p>GIT</p>
-      </div>
-      <div class="skill-card reveal">
-
-        <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <g fill="none" stroke="#f4ebeb" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-            <path
-              d="M12 4c1.67 0 2.61 0.4 3 0.5c0.53 -0.43 1.94 -1.5 3.5 -1.5c0.34 1 0.29 2.22 0 3c0.75 1 1 2 1 3.5c0 2.19 -0.48 3.58 -1.5 4.5c-1.02 0.92 -2.11 1.37 -3.5 1.5c0.65 0.54 0.5 1.87 0.5 2.5c0 0.73 0 3 0 3M12 4c-1.67 0 -2.61 0.4 -3 0.5c-0.53 -0.43 -1.94 -1.5 -3.5 -1.5c-0.34 1 -0.29 2.22 0 3c-0.75 1 -1 2 -1 3.5c0 2.19 0.48 3.58 1.5 4.5c1.02 0.92 2.11 1.37 3.5 1.5c-0.65 0.54 -0.5 1.87 -0.5 2.5c0 0.73 0 3 0 3" />
-            <path d="M9 19c-1.41 0 -2.84 -0.56 -3.69 -1.19c-0.84 -0.63 -1.09 -1.66 -2.31 -2.31" />
-          </g>
-        </svg>
-        <p>GITHUB</p>
-      </div>
-      <div class="skill-card reveal">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-        <p>VSCODE</p>
+      <div class="marquee-row" data-dir="right">
+        <div class="marquee-track" id="marqueeTrack2"></div>
       </div>
     </div>
+
+    <div class="skills-cta">
+      <button class="btn-view-all" id="viewAllSkillsBtn" type="button">
+        <span>View All Skills Stack</span>
+        <i class="fa fa-arrow-right"></i>
+      </button>
+    </div>
   </section>
+
+  <!-- ═══════════════════════════════════════════
+       SKILLS MODAL
+  ═══════════════════════════════════════════ -->
+  <div class="skills-modal-overlay" id="skillsModal" aria-hidden="true">
+    <div class="skills-modal-box" role="dialog" aria-modal="true" aria-labelledby="skillsModalTitle">
+      <button class="skills-modal-close" id="closeSkillsModal" aria-label="Close">
+        <i class="fa fa-times"></i>
+      </button>
+
+      <div class="skills-modal-head">
+        <span class="eyebrow"><span class="hero-dot"></span>Full Breakdown</span>
+        <h3 id="skillsModalTitle">Complete Skills <span class="gold">Arsenal</span></h3>
+        <p>Every tool, sorted by where it sits in the stack.</p>
+      </div>
+
+      <div class="skills-filter-row" id="skillsFilterRow">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="frontend">Frontend</button>
+        <button class="filter-chip" data-filter="backend">Backend</button>
+        <button class="filter-chip" data-filter="database">Database</button>
+        <button class="filter-chip" data-filter="tools">Tools &amp; Design</button>
+      </div>
+
+      <div class="skills-modal-grid" id="skillsModalGrid"></div>
+    </div>
+  </div>
+
   <div class="divider" style="background:#111">
     <svg viewBox="0 0 1440 50" fill="none">
       <path d="M0 50 L720 0 L1440 50" fill="#0D0D0D" />
     </svg>
   </div>
 
+  <!-- ═══════════════════════════════════════════
+       PROJECTS
+  ═══════════════════════════════════════════ -->
 
-
-  <!-- ─── PROJECTS ─────────────────────────── -->
   <section id="projects">
     <div class="reveal">
       <div class="eyebrow">Portfolio</div>
@@ -316,7 +282,9 @@
     </svg>
   </div>
 
-  <!-- ─── SERVICES ─────────────────────────── -->
+  <!-- ═══════════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════════ -->
   <section id="services">
     <div class="reveal" style="text-align:center">
       <div class="eyebrow" style="justify-content:center">What I Offer</div>
@@ -326,9 +294,7 @@
       </p>
     </div>
 
-    <div class="services-grid" id="servicesGrid">
-
-    </div>
+    <div class="services-grid" id="servicesGrid"></div>
   </section>
 
   <div class="divider" style="background:#0D0D0D">
@@ -337,52 +303,92 @@
     </svg>
   </div>
 
-  <!-- ─── EXPERIENCE ───────────────────────── -->
-  <section id="experience">
-    <div class="reveal" style="text-align:center;margin-bottom:64px">
-      <div class="eyebrow" style="justify-content:center">My Journey</div>
-      <h2 class="section-title">Education &amp; <span class="gold">Experience</span></h2>
+  <!-- ═══════════════════════════════════════════
+       WHY CHOOSE US 
+  ═══════════════════════════════════════════ -->
+  <section id="why-us">
+    <div class="why-head">
+      <span class="eyebrow"><span class="hero-dot"></span>Why Choose Us</span>
+      <h2 class="section-title">Built On What Actually <span class="gold">Matters</span></h2>
+      <p class="section-desc">
+        Not just another developer — a partner who treats your school's website
+        like it's the first impression every parent will judge you by.
+      </p>
     </div>
 
-    <div class="timeline">
-      <div class="tl-item reveal-right">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-year">2025 — 2026</div>
-          <div class="tl-title">Web Development Diploma</div>
-          <div class="tl-place"><i class="fas fa-laptop-code"></i> Aptech Institute, Bharatpur</div>
-          <div class="tl-desc">Mastered core web technologies — HTML, CSS, JavaScript, Python, and Mysql — through an
-            intensive program and built numerous real-world projects.</div>
+    <div class="why-list">
+
+      <div class="why-card reveal">
+        <div class="why-index">01</div>
+        <div class="why-icon"><i class="fa fa-bolt"></i></div>
+        <div class="why-body">
+          <h3>Fast, No-Excuse Delivery</h3>
+          <p>
+            Clear timelines set upfront and kept. No vanishing for weeks, no
+            endless "almost done" — you get regular updates and a site that
+            ships when it was promised to ship.
+          </p>
         </div>
+        <div class="why-arrow"><i class="fa fa-arrow-right"></i></div>
       </div>
 
-      <div class="tl-item reveal-left">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-year">2025 — Present</div>
-          <div class="tl-title">BTech — AI &amp; Data Science</div>
-          <div class="tl-place"><i class="fas fa-university"></i> Engineering College, Bharatpur</div>
-          <div class="tl-desc">Continuously developing expertise in full-stack technologies, including AI, Machine
-            Learning, databases, and software engineering to boost productivity.</div>
+      <div class="why-card reveal">
+        <div class="why-index">02</div>
+        <div class="why-icon"><i class="fa fa-code"></i></div>
+        <div class="why-body">
+          <h3>Clean, Hand-Written Code</h3>
+          <p>
+            No bloated page-builders or recycled templates. Every site is
+            coded from scratch in HTML, CSS, and JavaScript — lighter, faster,
+            and easier to maintain for years to come.
+          </p>
         </div>
+        <div class="why-arrow"><i class="fa fa-arrow-right"></i></div>
       </div>
 
-
-
-      <div class="tl-item reveal-left">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-year">2026 — present</div>
-          <div class="tl-title">Freelance Web Developer</div>
-          <div class="tl-place"><i class="fas fa-globe"></i> Remote — Independent</div>
-          <div class="tl-desc">Delivered high-quality client projects across e-commerce, portfolios, dashboards, and
-            business websites focusing on modern design, performance, and user experience.</div>
+      <div class="why-card reveal">
+        <div class="why-index">03</div>
+        <div class="why-icon"><i class="fa fa-mobile-screen-button"></i></div>
+        <div class="why-body">
+          <h3>Built Mobile-First</h3>
+          <p>
+            Most visitors will land on a phone. Every layout is designed and
+            tested for small screens first, then scaled up — so nothing looks
+            like an afterthought on mobile.
+          </p>
         </div>
+        <div class="why-arrow"><i class="fa fa-arrow-right"></i></div>
       </div>
 
+      <div class="why-card reveal">
+        <div class="why-index">04</div>
+        <div class="why-icon"><i class="fa fa-headset"></i></div>
+        <div class="why-body">
+          <h3>Support After Launch</h3>
+          <p>
+            The relationship doesn't end at delivery. Content updates, small
+            fixes, and questions get answered directly — no ticket queues, no
+            third-party agency in between.
+          </p>
+        </div>
+        <div class="why-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-index">05</div>
+        <div class="why-icon"><i class="fa fa-tag"></i></div>
+        <div class="why-body">
+          <h3>Transparent, Fair Pricing</h3>
+          <p>
+            One quote, explained clearly, agreed before work starts. No hidden
+            add-ons for "extra" pages or basic functionality — what you're
+            quoted is what you pay.
+          </p>
+        </div>
+        <div class="why-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
 
     </div>
-
   </section>
 
   <div class="divider" style="background:#111">
@@ -391,7 +397,9 @@
     </svg>
   </div>
 
-  <!-- ─── CONTACT ───────────────────────────── -->
+  <!-- ═══════════════════════════════════════════
+       CONTACT (info + form)
+  ═══════════════════════════════════════════ -->
   <section id="contact">
     <div class="reveal">
       <div class="eyebrow">Contact Me</div>
@@ -438,63 +446,40 @@
             title="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
-
-        <div class="trust-box">
-          <h3>Why Work <span>With Me?</span></h3>
-
-          <div class="trust-item">
-            <span>✓</span>
-            <p><strong>Your vision comes first.</strong> I take the time to understand your goals and treat every
-              project with genuine care and respect.</p>
-          </div>
-
-          <div class="trust-item">
-            <span>✓</span>
-            <p><strong>No surprises, just clarity.</strong> You'll receive honest timelines, regular updates, and
-              transparent communication from start to finish.</p>
-          </div>
-
-          <div class="trust-item">
-            <span>✓</span>
-            <p><strong>Built for long-term success.</strong> I focus on creating reliable, high-quality solutions and
-              remain available even after launch.</p>
-          </div>
-        </div>
       </div>
 
       <!-- Form -->
-
       <form class="contact-form reveal-right">
         <h1 class="form-heading">Let's Build <span>Something Amazing</span></h1>
         <div class="form-row">
           <div class="form-group">
-            <label>First Name</label>
+            <label for="fname">First Name</label>
             <input type="text" id="fname" placeholder="John">
           </div>
           <div class="form-group">
-            <label>Last Name</label>
+            <label for="lname">Last Name</label>
             <input type="text" id="lname" placeholder="Doe">
           </div>
         </div>
         <div class="form-group">
-          <label>mobile</label>
-          <input type="phone" id="fphone" placeholder="98765 43210">
+          <label for="fphone">mobile</label>
+          <input type="tel" id="fphone" placeholder="98765 43210">
         </div>
         <div class="form-group">
-          <label>Email Address</label>
+          <label for="femail">Email Address</label>
           <input type="email" id="femail" placeholder="john@example.com">
         </div>
         <div class="form-group">
-          <label>Subject</label>
+          <label for="fsubject">Subject</label>
           <input type="text" id="fsubject" placeholder="Project Inquiry">
         </div>
         <div class="form-group">
-          <label>Message</label>
+          <label for="fmessage">Message</label>
           <textarea id="fmessage" placeholder="Tell me about your project, budget, and timeline..."></textarea>
         </div>
         <p class="form-note"><i class="fas fa-bolt"></i> I typically respond within 24 hours. All conversations are
           confidential.</p>
-        <button class="btn-primary" onclick="submitForm()" style="width:100%;justify-content:center">
+        <button type="button" class="btn-primary" onclick="submitForm()" style="width:100%;justify-content:center">
           <i class="fa fa-paper-plane"></i> Send Message
         </button>
         <div class="form-success" id="form-success">Message sent — I'll get back to you within 24 hours.</div>
@@ -502,11 +487,14 @@
     </div>
   </section>
 
-  <!-- ─── FOOTER ───────────────────────────── -->
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
   <footer>
-    <a href="#hero" class="footer-logo ">
+    <a href="#hero" class="footer-logo">
       <img src="logo.png" alt="">
-      Web Kalakaar</a>
+      Web Kalakaar
+    </a>
     <div class="footer-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -515,9 +503,12 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="footer-copy">2026 Sharad Kumar. Built with passion.</div>
+    -new
   </footer>
 
-  <!-- Popup -->
+  <!-- ═══════════════════════════════════════════
+       POPUP (form success confirmation)
+  ═══════════════════════════════════════════ -->
   <div id="popup-overlay">
     <div id="popup-box">
       <div class="left">
@@ -535,12 +526,16 @@
           For urgent inquiries, feel free to contact me directly via email or phone.
         </p>
       </div>
-
     </div>
-
   </div>
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
   <script src="js/data.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/skills.js"></script>
+
   <!-- EmailJS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 

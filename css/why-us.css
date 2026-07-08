@@ -1,0 +1,211 @@
+/* ═══════════════════════════════════════════
+   WHY CHOOSE US — full-width list cards
+   Uses existing tokens: --gold --black --black2 --black3
+   --white --white2 --gray --glass --glass2 --border
+   --shadow --glow --radius --tr
+═══════════════════════════════════════════ */
+
+#why-us {
+  background: var(--black);
+}
+
+.why-head {
+  max-width: 640px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+.why-head .eyebrow {
+  justify-content: center;
+}
+.why-head .eyebrow::before {
+  display: none;
+}
+.why-head .section-desc {
+  margin: 0 auto;
+}
+
+/* ── LIST ─────────────────────────────────── */
+.why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.why-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 28px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 34px 36px;
+  overflow: hidden;
+  transition:
+    border-color var(--tr),
+    background var(--tr),
+    transform var(--tr),
+    box-shadow var(--tr);
+}
+
+/* left accent bar that grows in on hover */
+.why-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.why-card:hover {
+  border-color: rgba(250, 204, 21, 0.4);
+  background: var(--glass2);
+  transform: translateX(6px);
+  box-shadow: var(--shadow);
+}
+.why-card:hover::before {
+  transform: scaleY(1);
+}
+
+.why-index {
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(250, 204, 21, 0.35);
+  transition: color var(--tr);
+}
+.why-card:hover .why-index {
+  color: var(--gold);
+}
+
+.why-icon {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(250, 204, 21, 0.08);
+  border: 1px solid var(--border);
+  font-size: 1.3rem;
+  color: var(--gold);
+  transition: all var(--tr);
+}
+.why-card:hover .why-icon {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: var(--glow);
+  transform: scale(1.06);
+}
+
+.why-body h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.why-body p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.why-arrow {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray);
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all var(--tr);
+}
+.why-card:hover .why-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* stagger reveal — pairs with your existing .reveal/.vis observer */
+.why-list .why-card:nth-child(1) { transition-delay: 0s; }
+.why-list .why-card:nth-child(2) { transition-delay: 0.08s; }
+.why-list .why-card:nth-child(3) { transition-delay: 0.16s; }
+.why-list .why-card:nth-child(4) { transition-delay: 0.24s; }
+.why-list .why-card:nth-child(5) { transition-delay: 0.32s; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .why-card {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "icon index"
+      "body body";
+    row-gap: 16px;
+    padding: 28px 26px;
+  }
+  .why-index {
+    grid-area: index;
+    justify-self: end;
+  }
+  .why-icon {
+    grid-area: icon;
+  }
+  .why-body {
+    grid-area: body;
+  }
+  .why-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+    border-radius: 13px;
+  }
+  .why-body h3 {
+    font-size: 1.02rem;
+  }
+  .why-body p {
+    font-size: 0.85rem;
+  }
+  .why-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .why-list {
+    gap: 14px;
+  }
+  .why-card {
+    padding: 20px 16px;
+  }
+}

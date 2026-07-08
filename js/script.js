@@ -1,4 +1,3 @@
-
 /* ── BUILD PROJECTS ────────────────────────── */
 const projGrid = document.getElementById("projectsGrid");
 PROJECTS.forEach((p, i) => {
@@ -90,41 +89,40 @@ window.addEventListener("load", () => {
 });
 
 /* ── CUSTOM CURSOR ──────────────────────────── */
-if (window.matchMedia('(pointer: fine)').matches) {
- 
-const cur = document.getElementById("cursor");
-const ring = document.getElementById("cursor-ring");
-let rx = 0,
-  ry = 0,
-  mx = 0,
-  my = 0;
+if (window.matchMedia("(pointer: fine)").matches) {
+  const cur = document.getElementById("cursor");
+  const ring = document.getElementById("cursor-ring");
+  let rx = 0,
+    ry = 0,
+    mx = 0,
+    my = 0;
 
-document.addEventListener("mousemove", (e) => {
-  mx = e.clientX;
-  my = e.clientY;
-  cur.style.left = mx + "px";
-  cur.style.top = my + "px";
-});
-(function animRing() {
-  rx += (mx - rx) * 0.22;
-  ry += (my - ry) * 0.22;
-  ring.style.left = rx + "px";
-  ring.style.top = ry + "px";
-  requestAnimationFrame(animRing);
-})();
-
-document
-  .querySelectorAll(
-    "a,button,.skill-card,.project-card,.service-card,.stat,.social-btn",
-  )
-  .forEach((el) => {
-    el.addEventListener("mouseenter", () =>
-      document.body.classList.add("chover"),
-    );
-    el.addEventListener("mouseleave", () =>
-      document.body.classList.remove("chover"),
-    );
+  document.addEventListener("mousemove", (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    cur.style.left = mx + "px";
+    cur.style.top = my + "px";
   });
+  (function animRing() {
+    rx += (mx - rx) * 0.22;
+    ry += (my - ry) * 0.22;
+    ring.style.left = rx + "px";
+    ring.style.top = ry + "px";
+    requestAnimationFrame(animRing);
+  })();
+
+  document
+    .querySelectorAll(
+      "a,button,.skill-card,.project-card,.service-card,.stat,.social-btn",
+    )
+    .forEach((el) => {
+      el.addEventListener("mouseenter", () =>
+        document.body.classList.add("chover"),
+      );
+      el.addEventListener("mouseleave", () =>
+        document.body.classList.remove("chover"),
+      );
+    });
 }
 /* ── SCROLL EVENTS ──────────────────────────── */
 const navbar = document.getElementById("navbar");
@@ -157,7 +155,15 @@ window.closeMob = () => {
 };
 
 /* ── TYPING ANIMATION ───────────────────────── */
-const words = ["HTML5", "CSS3", "JavaScript", "Python", "Flask", "MySQL"];
+const words = [
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "Python",
+  "Flask",
+  "Django",
+  "MySQL",
+];
 let wi = 0,
   ci = 0,
   del = false;
@@ -182,20 +188,21 @@ function type() {
 }
 setTimeout(type, 1900);
 
-
 /* ── SCROLL REVEAL ──────────────────────────── */
-const revObs = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) {
-      e.target.classList.add("vis");
-      revObs.unobserve(e.target); // stop watching
-    }
-  });
-}, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+const revObs = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("vis");
+        revObs.unobserve(e.target); // stop watching
+      }
+    });
+  },
+  { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
+);
 document
   .querySelectorAll(".reveal,.reveal-left,.reveal-right")
   .forEach((el) => revObs.observe(el));
-
 
 /* ── COUNTER ANIMATION ──────────────────────── */
 function countUp(el, target, duration = 1500) {
@@ -230,19 +237,69 @@ const cntObs = new IntersectionObserver(
   { threshold: 0.4 },
 );
 document.querySelectorAll("#about").forEach((s) => cntObs.observe(s));
+/* ── PREMIUM 3D CARD TILT + FOLLOWING GLOW ───────────────────────── */
 
-/* ── 3D CARD TILT ───────────────────────────── */
-document.querySelectorAll(".project-card,.service-card").forEach((card) => {
-  card.addEventListener("mousemove", (e) => {
-    const r = card.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - 0.5;
-    const y = (e.clientY - r.top) / r.height - 0.5;
-    card.style.transform = `perspective(900px) rotateY(${x * 9}deg) rotateX(${-y * 9}deg) translateY(-8px)`;
-    card.style.boxShadow = `${-x * 20}px ${-y * 20}px 40px rgba(250,204,21,0.08), var(--shadow)`;
+document.querySelectorAll(".project-card, .service-card").forEach((card) => {
+  let mouseX = 0,
+    mouseY = 0,
+    currentX = 0,
+    currentY = 0;
+
+  let raf;
+
+  card.style.transformStyle = "preserve-3d";
+  card.style.transition =
+    "transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease";
+
+  function animate() {
+    currentX += (mouseX - currentX) * 0.15;
+    currentY += (mouseY - currentY) * 0.15;
+
+    const rotateY = currentX * 14;
+    const rotateX = -currentY * 14;
+
+    card.style.transform = `
+      perspective(1200px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      translateY(-10px)
+      scale(1.03)
+    `;
+
+    card.style.boxShadow = `
+      ${-currentX * 35}px ${-currentY * 35}px 50px rgba(250,204,21,.18),
+      0 20px 45px rgba(0,0,0,.28)
+    `;
+
+    raf = requestAnimationFrame(animate);
+  }
+
+  card.addEventListener("mouseenter", () => {
+    cancelAnimationFrame(raf);
+    animate();
   });
+
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+
+    mouseX = (e.clientX - rect.left) / rect.width - 0.5;
+    mouseY = (e.clientY - rect.top) / rect.height - 0.5;
+  });
+
   card.addEventListener("mouseleave", () => {
-    card.style.transform = "";
+    cancelAnimationFrame(raf);
+
+    card.style.transition =
+      "transform .6s cubic-bezier(.22,1,.36,1), box-shadow .6s ease, background .6s ease";
+
+    card.style.transform =
+      "perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)";
+
     card.style.boxShadow = "";
+
+    card.style.background = "";
+
+    mouseX = mouseY = currentX = currentY = 0;
   });
 });
 

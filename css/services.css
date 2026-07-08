@@ -1,4 +1,3 @@
-
 /* ═══════════════════════════════════════════
        SERVICES
     ═══════════════════════════════════════════ */
@@ -23,6 +22,7 @@
   position: relative;
   overflow: hidden;
   transition: all var(--tr);
+  
 }
 .service-card::before {
   content: "";
@@ -72,4 +72,33 @@
   font-size: 0.9rem;
   color: #B8B8B8;
   line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — services.css
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   ≤ 768px  ·  MOBILE
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: none; /* wipes the 4-column named-area layout */
+    grid-template-rows: auto;
+  }
+  .service-card {
+    grid-area: unset !important; /* JS sets gridArea inline — must override */
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ≤ 500px  ·  SMALL MOBILE
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 500px) {
+  /* explicit flex fallback in case grid min-width still fights narrow viewports */
+  .services-grid {
+    display: flex;
+    flex-direction: column;
+  }
 }

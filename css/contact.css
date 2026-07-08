@@ -77,87 +77,6 @@
   box-shadow: var(--glow);
 }
 
-.form-heading {
-  font-family: "Sora", sans-serif;
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  color: #ffffff;
-  margin-bottom: 29px;
-  text-align: center;
-}
-.form-heading span {
-  color: #facc15;
-}
-
-/* Form */
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-.form-group {
-  margin-bottom: 20px;
-}
-.form-group label {
-  display: block;
-  font-family: "Space Mono", monospace;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gray);
-  margin-bottom: 9px;
-}
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 15px 20px;
-  color: var(--white);
-  font-family: "DM Sans", sans-serif;
-  font-size: 0.95rem;
-  outline: none;
-  transition: all var(--tr);
-}
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 20px rgba(250, 204, 21, 0.1);
-  background: rgba(250, 204, 21, 0.02);
-}
-.form-group textarea {
-  resize: vertical;
-  min-height: 140px;
-}
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: rgba(136, 136, 136, 0.55);
-}
-.form-note {
-  font-size: 0.78rem;
-  color: var(--gray);
-  margin-bottom: 22px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.form-note i {
-  color: var(--gold);
-}
-.form-success {
-  display: none;
-  margin-top: 16px;
-  background: rgba(250, 204, 21, 0.08);
-  border: 1px solid rgba(250, 204, 21, 0.3);
-  border-radius: 12px;
-  padding: 16px 20px;
-  color: var(--gold);
-  font-size: 0.9rem;
-  text-align: center;
-}
 .trust-box {
   margin-top: 40px;
 }
@@ -187,4 +106,18 @@
 .trust-item p {
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — contact.css
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   ≤ 900px  ·  TABLET PORTRAIT
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
 }

@@ -1,4 +1,3 @@
-
 /* ═══════════════════════════════════════════
        PROJECTS
     ═══════════════════════════════════════════ */
@@ -185,4 +184,28 @@
 .project-card.reveal.vis {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — projects.css
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   ≤ 768px  ·  MOBILE
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ≤ 500px  ·  SMALL MOBILE
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 500px) {
+  /* explicit flex fallback in case grid min-width still fights narrow viewports */
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+  }
 }
