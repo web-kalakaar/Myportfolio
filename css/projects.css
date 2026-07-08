@@ -13,12 +13,13 @@
 .project-card {
   background: var(--glass);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   transition:
     border-color 0.4s ease,
-    transform 0.5s ease,
-    box-shadow 0.4s ease;
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    background 0.4s ease;
   position: relative;
   transform-style: preserve-3d;
 }

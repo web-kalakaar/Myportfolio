@@ -71,7 +71,7 @@ const preLogoEl = document.getElementById("preLogoEl");
   preLogoEl.appendChild(span);
 });
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   const pctEl = document.getElementById("pre-pct");
   let n = 0;
   const iv = setInterval(() => {
@@ -248,8 +248,8 @@ document.querySelectorAll(".project-card, .service-card").forEach((card) => {
   let raf;
 
   card.style.transformStyle = "preserve-3d";
-  card.style.transition =
-    "transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease";
+  // card.style.transition =
+  //   "transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease";
 
   function animate() {
     currentX += (mouseX - currentX) * 0.15;

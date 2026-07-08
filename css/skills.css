@@ -62,6 +62,7 @@
   display: flex;
   gap: 20px;
   width: max-content;
+  padding: 5px;
 }
 .marquee-row[data-dir="left"] .marquee-track {
   animation: marqueeLeft 38s linear infinite;
@@ -90,7 +91,7 @@
   gap: 14px;
   background: var(--glass);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 6px;
   padding: 16px 24px 16px 16px;
   min-width: 190px;
   transition: var(--tr);
