@@ -13,6 +13,10 @@
   <!-- ═══════════════════════════════════════════
        FONTS & ICONS
   ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap"
     rel="stylesheet">
@@ -79,7 +83,7 @@
       <li><a href="#skills-new">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#why-us">why us</a></li>
+      <li><a href="#why-us">Why Us</a></li>
       <li><a href="#contact" class="nav-cta">Hire Me</a></li>
     </ul>
     <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
@@ -91,7 +95,7 @@
     <a href="#skills-new" onclick="closeMob()">Skills</a>
     <a href="#projects" onclick="closeMob()">Projects</a>
     <a href="#services" onclick="closeMob()">Services</a>
-    <a href="#why-us" onclick="closeMob()">why us</a>
+    <a href="#why-us" onclick="closeMob()">Why Us</a>
     <a href="#contact" onclick="closeMob()">Contact</a>
   </div>
 
@@ -111,7 +115,7 @@
         <span class="name-row"><span class="name-inner gold">Kumar</span></span>
       </h1>
 
-      <p class="hero-sub">Full Stack Web Developer</p>
+      <p class="hero-sub">Front end web Developer</p>
 
       <div class="typing-row">
         <span class="typing-prefix">I build with</span>
@@ -139,7 +143,7 @@
 
         <div class="avatar-ring">
           <!-- Badge anchors handle position; inner badge handles counter-rotation -->
-          <span class="tb-anchor tb1"><span class="tech-badge">Python</span></span>
+          <span class="tb-anchor tb1"><span class="tech-badge">Web</span></span>
           <span class="tb-anchor tb2"><span class="tech-badge">HTML5</span></span>
           <span class="tb-anchor tb3"><span class="tech-badge">CSS3</span></span>
           <span class="tb-anchor tb4"><span class="tech-badge">JAVASCRIPT</span></span>
@@ -182,8 +186,8 @@
           I specialize in building clean, modern, and performant web applications that solve real problems.
         </p>
         <p>
-          I love building modern and user-friendly websites, from clean frontends to powerful backends
-          using Python and MySQL. My background in AI helps me create smart, efficient,
+          I love building modern and user-friendly websites, from clean frontends to smooth animated Websites. My
+          background in AI helps me create smart, efficient,
           and data-driven solutions.
         </p>
 
@@ -196,7 +200,11 @@
       </div>
     </div>
   </section>
-
+  <div class="divider" style="background:#111">
+    <svg viewBox="0 0 1440 50" fill="none">
+      <path d="M0 50 L720 0 L1440 50" fill="#0D0D0D" />
+    </svg>
+  </div>
   <!-- ═══════════════════════════════════════════
        SKILLS
   ═══════════════════════════════════════════ -->
@@ -259,7 +267,7 @@
 
   <div class="divider" style="background:#111">
     <svg viewBox="0 0 1440 50" fill="none">
-      <path d="M0 50 L720 0 L1440 50" fill="#0D0D0D" />
+      <path d="M0 0 L720 50 L1440 0" fill="#0D0D0D" />
     </svg>
   </div>
 
@@ -269,9 +277,10 @@
 
   <section id="projects">
     <div class="reveal">
-      <div class="eyebrow">Portfolio</div>
+      <div class="eyebrow">Web-Kalakaar</div>
       <h2 class="section-title">Featured <span class="gold">Projects</span></h2>
-      <p class="section-desc">A collection of real-world projects that highlight my full-stack development skills.</p>
+      <p class="section-desc">A collection of real-world demo projects that highlighting my Front-End development
+        skills.</p>
     </div>
     <div class="projects-grid" id="projectsGrid"></div>
   </section>
@@ -297,9 +306,9 @@
     <div class="services-grid" id="servicesGrid"></div>
   </section>
 
-  <div class="divider" style="background:#0D0D0D">
+  <div class="divider" style="background:#111">
     <svg viewBox="0 0 1440 50" fill="none">
-      <path d="M0 0 L720 50 L1440 0" fill="#111111" />
+      <path d="M0 0 L720 50 L1440 0" fill="#0D0D0D" />
     </svg>
   </div>
 
@@ -318,7 +327,7 @@
 
     <div class="why-list">
 
-      <div class="why-card reveal">
+      <div class="why-card reveal-left">
         <div class="why-index">01</div>
         <div class="why-icon"><i class="fa fa-bolt"></i></div>
         <div class="why-body">
@@ -332,7 +341,7 @@
         <div class="why-arrow"><i class="fa fa-arrow-right"></i></div>
       </div>
 
-      <div class="why-card reveal">
+      <div class="why-card reveal-right">
         <div class="why-index">02</div>
         <div class="why-icon"><i class="fa fa-code"></i></div>
         <div class="why-body">
@@ -346,7 +355,7 @@
         <div class="why-arrow"><i class="fa fa-arrow-right"></i></div>
       </div>
 
-      <div class="why-card reveal">
+      <div class="why-card reveal-left">
         <div class="why-index">03</div>
         <div class="why-icon"><i class="fa fa-mobile-screen-button"></i></div>
         <div class="why-body">
@@ -360,7 +369,7 @@
         <div class="why-arrow"><i class="fa fa-arrow-right"></i></div>
       </div>
 
-      <div class="why-card reveal">
+      <div class="why-card reveal-right">
         <div class="why-index">04</div>
         <div class="why-icon"><i class="fa fa-headset"></i></div>
         <div class="why-body">
@@ -374,7 +383,7 @@
         <div class="why-arrow"><i class="fa fa-arrow-right"></i></div>
       </div>
 
-      <div class="why-card reveal">
+      <div class="why-card reveal-left">
         <div class="why-index">05</div>
         <div class="why-icon"><i class="fa fa-tag"></i></div>
         <div class="why-body">
@@ -463,36 +472,43 @@
       </div>
 
       <!-- Form -->
-      <form class="contact-form reveal-right">
+      <form class="contact-form reveal-right" novalidate>
         <h1 class="form-heading">Let's Build <span>Something Amazing</span></h1>
         <div class="form-row">
           <div class="form-group">
             <label for="fname">First Name</label>
-            <input type="text" id="fname" placeholder="John">
+            <input type="text" id="fname" placeholder="John" required>
+            <span class="field-error" id="err-fname"></span>
           </div>
           <div class="form-group">
             <label for="lname">Last Name</label>
             <input type="text" id="lname" placeholder="Doe">
+            <span class="field-error" id="err-lname"></span>
           </div>
         </div>
         <div class="form-group">
-          <label for="fphone">mobile</label>
-          <input type="tel" id="fphone" placeholder="98765 43210">
+          <label for="fphone">Mobile</label>
+          <input type="tel" id="fphone" placeholder="+91 98765 43210" required>
+          <span class="field-error" id="err-fphone"></span>
         </div>
         <div class="form-group">
           <label for="femail">Email Address</label>
-          <input type="email" id="femail" placeholder="john@example.com">
+          <input type="email" id="femail" placeholder="john@example.com" required>
+          <span class="field-error" id="err-femail"></span>
         </div>
         <div class="form-group">
           <label for="fsubject">Subject</label>
-          <input type="text" id="fsubject" placeholder="Project Inquiry">
+          <input type="text" id="fsubject" placeholder="Project Inquiry" required>
+          <span class="field-error" id="err-fsubject"></span>
         </div>
         <div class="form-group">
           <label for="fmessage">Message</label>
-          <textarea id="fmessage" placeholder="Tell me about your project, budget, and timeline..."></textarea>
+          <textarea id="fmessage" placeholder="Tell me about your project, budget, and timeline..." required></textarea>
+          <span class="field-error" id="err-fmessage"></span>
         </div>
         <p class="form-note"><i class="fas fa-bolt"></i> I typically respond within 24 hours. All conversations are
           confidential.</p>
+        <p class="form-error-summary" id="form-error-summary"></p>
         <button type="button" class="btn-primary" onclick="submitForm()" style="width:100%;justify-content:center">
           <i class="fa fa-paper-plane"></i> Send Message
         </button>
@@ -511,7 +527,7 @@
     </a>
     <div class="footer-links">
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
+      <a href="#skills-new">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
@@ -546,6 +562,7 @@
   <!-- ═══════════════════════════════════════════
        SCRIPTS
   ═══════════════════════════════════════════ -->
+
   <script src="js/data.js"></script>
   <script src="js/script.js"></script>
   <script src="js/skills.js"></script>

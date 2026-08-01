@@ -7,7 +7,7 @@
 ═══════════════════════════════════════════ */
 
 #skills-new {
-  background: var(--black2);
+  background: var(--black);
   overflow: hidden;
   padding-bottom: 90px;
 }
@@ -398,46 +398,4 @@
     gap: 14px;
   }
 
-  /* ── Legacy (old #skills / #SkillsGrid carousel section) ──
-     Preserved from the original mediaquery.css. No dedicated base
-     rules for these selectors were included among the supplied
-     files, but the responsive overrides are kept here since they
-     belong to the "skills" component. */
-  #skills {
-    overflow: hidden; /* clips the carousel track to the viewport — do not remove */
-  }
-  #SkillsGrid {
-    gap: 14px;
-  }
-  .skill-card {
-    animation: none; /* 16 concurrent float transforms freeze mobile GPU */
-    width: 130px;
-    padding: 16px 10px;
-  }
-  .skill-card img,
-  .skill-card svg {
-    width: 38px;
-    height: 38px;
-  }
-  .skill-card p {
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    margin-top: 8px;
-  }
-}
-
-@media (max-width: 500px) {
-  .skills-modal-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .filter-chip {
-    font-size: 0.62rem;
-    padding: 8px 14px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none !important;
-  }
 }

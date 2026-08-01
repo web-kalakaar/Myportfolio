@@ -1,76 +1,99 @@
+/* ═══════════════════════════════════════════════════════════════
+   DATA.JS
+   Single source of truth for all dynamic content.
+   Edit these arrays only — script.js reads from them and builds
+   the DOM automatically. No HTML needs to be touched to add,
+   remove, or reorder a project/service.
+═══════════════════════════════════════════════════════════════ */
+
+/* ── SERVICES ──────────────────────────────────────────────── */
 const SERVICES = [
   {
     num: "01",
-    img: "fas fa-globe",
-    title: "Full-Stack Website Development",
-    desc: "Building full-stack web applications with HTML, CSS, JavaScript, Python, and MySQL—from elegant landing pages to feature-rich portals—crafted for performance, scalability, and long-term reliability.",
+    icon: "fas fa-globe",
+    title: "Front-End Website Development",
+    desc: "Crafting modern, responsive, and interactive front-end websites with clean code, smooth animations, and pixel-perfect designs that elevate your online presence.",
   },
-
   {
     num: "02",
-    img: "fas fa-server",
-    title: "Backend Development",
-    desc: "Developing secure APIs, authentication systems, and server-side logic that power reliable and high-performing applications.",
+    icon: "fas fa-globe",
+    title: "Full-Stack Website Development",
+    desc: "Building full-stack web applications with HTML, CSS, JavaScript, Python, and MySQL — from elegant landing pages to feature-rich portals — crafted for performance, scalability, and long-term reliability.",
   },
-
   {
     num: "03",
-    img: "fas fa-database",
+    icon: "fas fa-database",
     title: "Database Design",
     desc: "Designing efficient MySQL databases with optimized queries and scalable structures for data-driven applications.",
   },
-
   {
     num: "04",
-    img: "fas fa-mobile-alt",
+    icon: "fas fa-mobile-alt",
     title: "Responsive Development",
-    desc: "Creating mobile-first experiences that adapt seamlessly across phones, tablets, and desktops without compromising performance.",
+    desc: "Designing responsive digital experiences that look and perform flawlessly on every screen size and device.",
   },
-
   {
     num: "05",
-    img: "fas fa-rocket",
+    icon: "fas fa-rocket",
     title: "Deployment & SEO",
-    desc: "From seamless deployments to long-term growth, I ensure every website launches with optimized performance, technical SEO best practices, and a solid foundation for speed, visibility, and lasting impact. The result is a polished digital experience that not only looks exceptional but also reaches the right audience and performs reliably at scale.",
+    desc: "From seamless deployments to long-term growth, I ensure every website launches with optimized performance, technical SEO best practices, and a solid foundation for speed, visibility, and lasting impact.",
   },
 ];
+
+/* ── PROJECTS ──────────────────────────────────────────────── */
 const PROJECTS = [
   {
-    tag: "School Website — 1v",
-    title: "Classic School Website",
-    desc: "A modern school website designed to present academic information with clarity, accessibility, and a clean user experience.",
-    img: "projectsimages/school1.png",
+    tag: "Educational Platform",
+    title: "School Website — Version 1",
+    desc: "A modern educational website featuring a professional homepage, academic sections, admissions, faculty details, and responsive layouts designed to enhance a school's digital presence.",
+    img: "projectsimages/school-wk-1.webp",
     skills: ["HTML", "CSS", "JavaScript"],
-    live: "https://web-kalakaar.github.io/school1website/",
-    gh: "https://github.com/web-kalakaar/school1website",
-  },
-
-  {
-    tag: "School Website — 5v",
-    title: "Next-Gen School Website",
-    desc: "An interactive school website featuring premium animations and a visually engaging experience for modern institutions.",
-    img: "projectsimages/school5.png",
-    skills: ["HTML", "CSS", "JavaScript"],
-    live: "https://web-kalakaar.github.io/school5website/",
-    gh: "https://github.com/web-kalakaar/school5website",
-  },
-
-  {
-    tag: "Coaching Institute",
-    title: "Professional Coaching Website",
-    desc: "A professional coaching platform built to strengthen digital presence and showcase educational services effectively.",
-    img: "projectsimages/apex.png",
-    skills: ["HTML", "CSS", "JavaScript"],
-    live: "https://web-kalakaar.github.io/apex-institute/",
-    gh: "https://github.com/web-kalakaar/apex-institute",
+    live: "https://web-kalakaar.github.io/school-wk-1/",
+    gh: "https://github.com/web-kalakaar/school-wk-1",
   },
   {
-    tag: "Pet Shop",
-    title: "Modern Pet Store Website",
-    desc: "A modern and responsive pet shop website designed to showcase pets, pet products, and services with an engaging user experience.",
-    img: "projectsimages/petshop.png",
+    tag: "Educational Platform",
+    title: "Coaching Institute Website",
+    desc: "A professional coaching institute website designed to highlight courses, faculty, achievements, and admissions through an engaging and user-friendly interface.",
+    img: "projectsimages/coaching-website.webp",
+    skills: ["HTML", "CSS", "JavaScript"],
+    live: "https://web-kalakaar.github.io/coaching-website/",
+    gh: "https://github.com/web-kalakaar/coaching-website",
+  },
+  {
+    tag: "Educational Platform",
+    title: "School Website — Version 2",
+    desc: "A refined school website with enhanced layouts, modern UI components, responsive pages, and improved visual storytelling for educational institutions.",
+    img: "projectsimages/school-wk-2.webp",
+    skills: ["HTML", "CSS", "JavaScript"],
+    live: "https://web-kalakaar.github.io/school-wk-2/",
+    gh: "https://github.com/web-kalakaar/school-wk-2",
+  },
+  {
+    tag: "Real Estate",
+    title: "PS Blue Brick Builders Estate",
+    desc: "A premium real estate website showcasing residential properties, modern architecture, project highlights, and inquiry features with an elegant visual experience.",
+    img: "projectsimages/psbluebrickestate.webp",
+    skills: ["HTML", "CSS", "JavaScript"],
+    live: "https://web-kalakaar.github.io/psbluebrickbuildersestate/",
+    gh: "https://github.com/web-kalakaar/psbluebrickbuildersestate",
+  },
+  {
+    tag: "E-Commerce",
+    title: "Pet Shop Website",
+    desc: "An engaging pet store website featuring product showcases, service highlights, pet categories, and a clean shopping-inspired interface for pet lovers.",
+    img: "projectsimages/petshop.webp",
     skills: ["HTML", "CSS", "JavaScript"],
     live: "https://web-kalakaar.github.io/petshop/",
     gh: "https://github.com/web-kalakaar/petshop",
+  },
+  {
+    tag: "Training Institute",
+    title: "Dash Skill Edutrain",
+    desc: "A modern institute website developed to showcase vocational training programs, certifications, career opportunities, and student-focused learning experiences.",
+    img: "projectsimages/dashskill.webp",
+    skills: ["HTML", "CSS", "JavaScript"],
+    live: "https://web-kalakaar.github.io/dashskilledutrain/",
+    gh: "https://github.com/web-kalakaar/dashskilledutrain",
   },
 ];

@@ -1,82 +1,180 @@
-emailjs.init({
-  publicKey: "LfvcbtBQfzG3ORN9A",
-});
-/* ── FORM SUBMIT ────────────────────────────── */
-window.submitForm = function () {
-  const fname = document.getElementById("fname").value.trim();
-  const lname = document.getElementById("lname").value.trim();
-  const email = document.getElementById("femail").value.trim();
-  const msg = document.getElementById("fmessage").value;
-  const phone = document.getElementById("fphone").value.trim();
-  const subject = document.getElementById("fsubject").value.trim();
-  const submittedAt = new Date().toLocaleString();
+/* ═══════════════════════════════════════════════════════════════
+   FORM.JS
+   Contact form validation + EmailJS submission + inline errors.
+═══════════════════════════════════════════════════════════════ */
+(() => {
+  "use strict";
 
-  if (!fname || !email || !msg || !phone || !subject) {
-    alert("Please fill in all required fields.");
-    return;
-  }
+  emailjs.init({ publicKey: "LfvcbtBQfzG3ORN9A" });
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-  if (!/^[6-9]\d{9}$/.test(phone)) {
-    alert("Please enter a valid 10-digit phone number.");
-    return;
-  }
+  const EMAILJS_SERVICE_ID = "service_2z6wdhc";
+  const EMAILJS_TEMPLATE_ID = "template_9s63ebc";
+
+  const REQUIRED_FIELD_IDS = [
+    "fname",
+    "femail",
+    "fphone",
+    "fsubject",
+    "fmessage",
+  ];
+  const ALL_FIELD_IDS = [
+    "fname",
+    "lname",
+    "femail",
+    "fsubject",
+    "fmessage",
+    "fphone",
+  ];
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const PHONE_RE = /^\+?[1-9]\d{7,14}$/;
+
+  const $ = (id) => document.getElementById(id);
   const btn = document.querySelector(".contact-form .btn-primary");
-  btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
-  btn.disabled = true;
+  if (!btn) return;
 
-  const Params = {
-    from_fname: fname,
-    from_lname: lname,
-    from_email: email,
-    from_phone: phone,
-    from_subject: subject,
-    from_message: msg,
-    from_submittedAt: submittedAt,
-  };
-  console.table(Params);
+  const popupOverlay = $("popup-overlay");
+  const errorSummary = $("form-error-summary");
 
-  emailjs
-    .send("service_2z6wdhc", "template_9s63ebc", Params)
-    .then((result) => {
-      setTimeout(() => {
-        btn.innerHTML = '<i class="fa fa-check"></i> Sent!';
-        document.getElementById("popup-overlay").classList.add("active");
+  /* ── FIELD ERROR HELPERS ───────────────────────────────────── */
+  function setFieldError(id, message) {
+    const input = $(id);
+    const errEl = $(`err-${id}`);
+    if (!input || !errEl) return;
+
+    input.closest(".form-group")?.classList.toggle("has-error", !!message);
+    errEl.textContent = message || "";
+    errEl.classList.toggle("show", !!message);
+  }
+
+  function clearAllErrors() {
+    ALL_FIELD_IDS.forEach((id) => setFieldError(id, ""));
+    errorSummary.classList.remove("show");
+    errorSummary.textContent = "";
+  }
+
+  // Clear a field's error the moment the user starts fixing it
+  ALL_FIELD_IDS.forEach((id) => {
+    $(id)?.addEventListener("input", () => setFieldError(id, ""));
+  });
+
+  /* ── VALIDATION ────────────────────────────────────────────── */
+  function readFormValues() {
+    return {
+      fname: $("fname").value.trim(),
+      lname: $("lname").value.trim(),
+      email: $("femail").value.trim(),
+      phone: $("fphone").value.trim(),
+      subject: $("fsubject").value.trim(),
+      message: $("fmessage").value.trim(),
+    };
+  }
+
+  // Returns true if valid; sets inline errors and returns false otherwise
+  function validate({ fname, email, phone, subject, message }) {
+    let firstInvalid = null;
+    const fail = (id, msg) => {
+      setFieldError(id, msg);
+      if (!firstInvalid) firstInvalid = id;
+    };
+
+    if (!fname) fail("fname", "First name is required.");
+    if (!subject) fail("fsubject", "Please add a subject.");
+    if (!message) fail("fmessage", "Tell me a bit about the project.");
+
+    if (!email) {
+      fail("femail", "Email is required.");
+    } else if (!EMAIL_RE.test(email)) {
+      fail("femail", "That doesn't look like a valid email.");
+    }
+
+    if (!phone) {
+      fail("fphone", "Phone number is required.");
+    } else if (!PHONE_RE.test(phone)) {
+      fail(
+        "fphone",
+        "Enter a valid number with country code, e.g. +91 9876543210.",
+      );
+    }
+
+    if (firstInvalid) {
+      errorSummary.textContent = "Please fix the highlighted fields below.";
+      errorSummary.classList.add("show");
+      $(firstInvalid).focus();
+      return false;
+    }
+    return true;
+  }
+
+  /* ── UI STATE HELPERS ──────────────────────────────────────── */
+  function setButtonState(state) {
+    const states = {
+      idle: {
+        html: '<i class="fa fa-paper-plane"></i> Send Message',
+        disabled: false,
+      },
+      sending: {
+        html: '<i class="fa fa-spinner fa-spin"></i> Sending...',
+        disabled: true,
+      },
+      sent: { html: '<i class="fa fa-check"></i> Sent!', disabled: true },
+    };
+    const s = states[state];
+    btn.innerHTML = s.html;
+    btn.disabled = s.disabled;
+  }
+
+  function resetFormFields() {
+    ALL_FIELD_IDS.forEach((id) => ($(id).value = ""));
+    clearAllErrors();
+  }
+
+  /* ── SUBMIT HANDLER ────────────────────────────────────────── */
+  window.submitForm = function submitForm() {
+    clearAllErrors();
+    const values = readFormValues();
+    if (!validate(values)) return;
+
+    setButtonState("sending");
+
+    const templateParams = {
+      from_fname: values.fname,
+      from_lname: values.lname,
+      from_email: values.email,
+      from_phone: values.phone,
+      from_subject: values.subject,
+      from_message: values.message,
+      from_submittedAt: new Date().toLocaleString(),
+    };
+
+    emailjs
+      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(() => {
         setTimeout(() => {
-          btn.innerHTML = '<i class="fa fa-paper-plane"></i> Send Message';
-          btn.disabled = false;
-          [
-            "fname",
-            "lname",
-            "femail",
-            "fsubject",
-            "fmessage",
-            "fphone",
-          ].forEach((id) => (document.getElementById(id).value = ""));
-        }, 4000);
-      }, 1500);
-    })
-    .catch((error) => {
-      console.error("EmailJS Error:", error);
+          setButtonState("sent");
+          popupOverlay?.classList.add("active");
 
-      alert("Failed to send message. Please try again.");
+          setTimeout(() => {
+            setButtonState("idle");
+            resetFormFields();
+          }, 4000);
+        }, 1500);
+      })
+      .catch((err) => {
+        console.error("EmailJS Error:", err);
+        errorSummary.textContent =
+          "Something went wrong sending your message. Please try again or email me directly.";
+        errorSummary.classList.add("show");
+        setButtonState("idle");
+      });
+  };
 
-      btn.innerHTML = '<i class="fa fa-paper-plane"></i> Send Message';
-
-      btn.disabled = false;
-    });
-};
-
-document
-  .getElementById("popup-close")
-  .addEventListener("click", () =>
-    document.getElementById("popup-overlay").classList.remove("active"),
+  /* ── POPUP CLOSE ───────────────────────────────────────────── */
+  $("popup-close")?.addEventListener("click", () =>
+    popupOverlay?.classList.remove("active"),
   );
-
-document.getElementById("popup-overlay").addEventListener("click", (e) => {
-  if (e.target.id === "popup-overlay")
-    document.getElementById("popup-overlay").classList.remove("active");
-});
+  popupOverlay?.addEventListener("click", (e) => {
+    if (e.target.id === "popup-overlay")
+      popupOverlay.classList.remove("active");
+  });
+})();
