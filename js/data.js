@@ -93,7 +93,7 @@ const PROJECTS = [
     desc: "A modern institute website developed to showcase vocational training programs, certifications, career opportunities, and student-focused learning experiences.",
     img: "projectsimages/dashskill.webp",
     skills: ["HTML", "CSS", "JavaScript"],
-    live: "https://web-kalakaar.github.io/dashskilledutrain/",
+    live: "https://dashskilledutrain.vercel.app",
     gh: "https://github.com/web-kalakaar/dashskilledutrain",
   },
 ];
